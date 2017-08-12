@@ -1,0 +1,16 @@
+1. Goto the folder backports-20150731 and rune the following command (We are just trying to compile the code here)
+
+sudo make install
+-------------------------------------------------------------------------------
+2. Once this is done goto the folder ath10k-firmware-master and the following commands
+
+sudo cp -R ath10k/ /lib/firmware/
+
+sudo bash -c 'echo "options ath10k_core skip_otp=y" > /etc/modprobe.d/ath10k.conf'
+
+----------------------------------------------------------------------------------
+3. Now reboot the system. After reboot run the following command. (it will throw error if you run without reboot)
+
+sudo modprobe ath10k_pci
+
+ 
